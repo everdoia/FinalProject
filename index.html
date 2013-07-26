@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RealRenters.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('.hover').hover(function(){
+                $(this).addClass('flip');
+            },function(){
+                $(this).removeClass('flip');
+            });
+        });
+
+        $(function() {
+    var availableTags = [
+      "New York, NY",
+      "Los Angeles, Calif.",
+      "Chicago, Ill.",
+      "Houston, Tex.",
+      "Philadelphia, Pa.",
+      "Phoenix, Ariz.",
+      "San Antonio, Tex.",
+      "San Diego, Calif.",
+      "Dallas, Tex.",
+      "San Jose, Calif.",
+      "Austin, Tex.",
+      "Jacksonville, Fla.",
+      "Indianapolis, Ind.",
+      "San Francisco, Calif.",
+      "Columbus, Ohio",
+      "Fort Worth, Tex.",
+      "Charlotte, N.C.",
+      "Detroit, Mich.",
+      "El Paso, Tex.",
+      "Memphis, Tenn.",
+      "Boston, Mass.",
+      "Seattle, Wash.",
+      "Denver, Colo.",
+      "Washington, DC",
+      "Nashville-Davidson, Tenn",
+      "Baltimore, Md."
+      
+    ];
+    $( "#search" ).autocomplete({
+      source: availableTags
+    });
+  });
+    </script>
+
+    <!-- Le styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 0px;
+        padding-bottom: 10px;
+      }
+
+      
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 0px 0;
+      }
+
+      
+      .jumbotron {
+        margin: 0px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+   
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+
+     
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+       .panel {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;  
+            position: relative;
+            text-align: left;
+            font-size: 14px;
+            -webkit-perspective: 600px;
+            -moz-perspective: 600px;
+        }
+        
+        .panel .front {
+            position: absolute;
+            top: 0;
+            z-index: 900;
+            width: inherit;
+            height: inherit;
+            -webkit-transform: rotateX(0deg) rotateY(0deg);
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            -moz-transform: rotateX(0deg) rotateY(0deg);
+            -moz-transform-style: preserve-3d;
+            -moz-backface-visibility: hidden;
+            /* -- transition is the magic sauce for animation -- */
+            -o-transition: all .4s ease-in-out;
+            -ms-transition: all .4s ease-in-out;
+            -moz-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        .panel.flip .front {
+            z-index: 900;
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+        }
+        .panel .back {
+          margin-top: 60px;
+            position: absolute;
+            top: 0;
+            z-index: 800;
+            width: inherit;
+            height: inherit;
+            -webkit-transform: rotateY(-180deg);
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+ 
+            -moz-transform: rotateY(-180deg);
+            -moz-transform-style: preserve-3d;
+            -moz-backface-visibility: hidden;
+            /* -- transition is the magic sauce for animation -- */
+            -o-transition: all .4s ease-in-out;
+            -ms-transition: all .4s ease-in-out;
+            -moz-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        .panel.flip .back {
+            z-index: 1000;
+            -webkit-transform: rotateX(0deg) rotateY(0deg);
+            -moz-transform: rotateX(0deg) rotateY(0deg);
+        }
+        .sign {
+          text-align: right;
+          padding-top: 5px;
+          padding-right: 5px;
+          padding-bottom: 5px; 
+        }
+        .image {  
+          position: relative;
+          width: 100%; /* for IE 6 */
+      -webkit-filter: blur(2px);  
+        }  
+        .head{
+          position: relative;
+          width: 100%; /* for IE 6 */
+        }
+        .mast{
+          position: absolute;
+          top: 0px;
+          left: 0px
+          width: 100%;
+        }
+
+        .jumbotron{
+          position: absolute;
+          top: 65px;
+          left: 10px;
+          width: 100%;
+          border-left: 0px;
+          color: #fff;
+        }
+        
+
+    </style>
+    <link href="  css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+    <div class="sign"><a class="btn btn-medium btn-success" href="signin.html">Sign In</a></div>
+
+
+<div class="head"> 
+    
+        <div class="image"><img src="img/home.jpg" alt=""></div>
+    <div class="mast"> <h3 class="muted">RealRenters.co</h3> </div>
+      <div class="container">
+
+      <div class="jumbotron">
+        
+        <p class="lead">The Fastest Way to get the rental you want!</p>
+        <br>
+        <p class="lead"><strong>  1. </strong> Find your documents Securley <strong>  2. </strong> Search for listings<strong>  3. </strong>Apply,Bid, and WIN!</p>
+<br><br><br><br>
+
+        <form id="searchbox" action="">
+    <input id="search" type="text" placeholder="e.g: San Francisco, 95008, Bay Area">
+    <input id="submit" type="submit" value="Search">
+      </form>
+        
+          </div>
+        </div>
+      <hr>
+
+      <!-- Example row of columns -->
+      <div class="row-fluid">
+        <div class="span4">
+         <div class="hover panel">
+           <div class="front">
+             <div class="pad">
+                <h2>Search and Secure your Records</h2>
+                <img src="img/search.jpeg" alt="Search" height="200" width="200">
+              </div>
+             </div>
+                <div class="back">
+                  <div class="pad">
+                <p>Real Renters secures all of your information securly, so you can show your qualifications securely to land your new space, fast!</p><p><a class="btn" href="#">See How Here &raquo;</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <div class="span4">
+         <div class="hover panel">
+           <div class="front">
+             <div class="pad">
+                <h2>Find 1000's of Listing</h2>
+                <img src="img/rental house.jpeg" alt="Smiley face" height="240" width="250">
+              </div>
+             </div>
+                <div class="back">
+                  <div class="pad">
+                <p>Use the search box above to get the most current listings for your area. Use the advanced search feature, too!</p><p><a class="btn" href="#">Try it Out! &raquo;</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <div class="span4">
+         <div class="hover panel">
+           <div class="front">
+             <div class="pad">
+                <h2> Get Your new Space!</h2>
+                <img src="img/keys.jpg" alt="Smiley face" height="250" width="250">
+              </div>
+             </div>
+                <div class="back">
+                  <div class="pad">
+                <p>Landlords see your application on the Real Renters secure site and will accept the highest bidder based on their credentials. Search for your new space today!</p><p><a class="btn" href="#">View details &raquo;</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; RealRenters.co LLC 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
